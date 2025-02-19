@@ -3,21 +3,31 @@
 
 (defn is-even? [n]
   (if (= n 0)
-    __
-    (___ (is-even? (dec n)))))
+    true
+    (not (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
+      acc
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [reversed () coll coll]
+    (if (empty? coll)
+    reversed
+      ;;This next part uses the fact that conj will add
+      ;;the first item into the front of the reversed collection
+      ;;then continues with everything except the first item in the collection
+      ;;() (1 2 3) => (1) (2 3) => (2 1)  (3) => (3 2 1) ()
+    (recur (conj reversed (first coll)) (rest coll)))))
 
 (defn factorial [n]
-  __)
+  (loop [n n acc 1]
+    (if (= 1 n)
+      acc
+      (recur (dec n) (* n acc)))))
 
 (meditations
   "Recursion ends with a base case"
