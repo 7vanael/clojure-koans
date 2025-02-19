@@ -8,10 +8,10 @@
 
 (defn is-even-bigint? [n]
   (loop [n   n
-         acc true]
+         even-tracker true]
     (if (= n 0)
-      acc
-      (recur (dec n) (not acc)))))
+      even-tracker
+      (recur (dec n) (not even-tracker)))))
 
 (defn recursive-reverse [coll]
   (loop [reversed () coll coll]

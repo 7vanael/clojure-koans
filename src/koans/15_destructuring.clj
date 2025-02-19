@@ -50,4 +50,5 @@
           (string/join ", " [(str first-name " " last-name)
                              street-address
                              city
-                             state]))) ["Test" "Testerson"] test-address)))
+                             state])))
+       ["Test" "Testerson"] test-address)))
